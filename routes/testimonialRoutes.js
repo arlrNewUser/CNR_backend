@@ -9,15 +9,18 @@ import checkAdmin from "../middleware/adminMiddleware.js";
 
 const router = express.Router();
 
-// Public routes
 router
     .route("/")
     .post(addTestimonial)
+
+router
+    .route("/get/:year/:month/:organizationId")
     .get(checkAuth, checkAdmin, getTestimonials)
 
-// Private routes
 router
-    .route("/:date")
+    .route("/:year/:month/:organizationId")
     .get(checkAuth, checkAdmin, getTestimonial);
+
+
 
 export default router;

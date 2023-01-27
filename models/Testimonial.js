@@ -12,5 +12,5 @@ export const Testimonial = db.define('testimonial', {
         allowNull: false,
     },
 }, {
-    timestamps: true,
+    timestamps: false,
 });

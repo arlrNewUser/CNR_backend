@@ -8,6 +8,7 @@ import { Group } from "./Group.js";
 import { Menu } from "./Menu.js"
 import { Content } from "./Content.js"
 import { Type } from "./Type.js"
+import { Meal } from "./Meal.js";
 
 import { Testimonial } from "./Testimonial.js"
 
@@ -47,6 +48,14 @@ Menu.belongsTo(Organization, {
     }
 });
 
+// Meal has many Menus
+Meal.hasMany(Menu, {
+    foreignKey:{
+        allowNull: false,
+    }
+});
+Menu.belongsTo(Meal);
+
 // Menus (many to many) contents
 Menu.belongsToMany(Content, { through: "MenuContent" })
 Content.belongsToMany(Menu, { through: "MenuContent" })
@@ -59,9 +68,18 @@ Type.hasMany(Content, {
 });
 Content.belongsTo(Type);
 
+/*
 // User has many Testimonials
 User.hasMany(Testimonial);
 Testimonial.belongsTo(User);
+*/
 
+// Menu has many Testimonials
+Menu.hasMany(Testimonial, {
+    foreignKey:{
+        allowNull: false,
+    }
+});
+Testimonial.belongsTo(Menu);
 
 export default db;

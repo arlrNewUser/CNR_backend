@@ -20,13 +20,14 @@ db.authenticate()
     .catch( error => console.log(error) )
 
 // Destructive create database
+
 /*
 db.sync({ force: true })
     .then( () => console.log('Base de datos reconfigurada') )
     .catch( error => console.log(error) )
 */
 
-/*
+
 const allowedDomains = [process.env.FRONTEND_URL];
 
 
@@ -42,7 +43,6 @@ const corsOptions = {
 
 
 app.use(cors(corsOptions));
-*/
 
 // Routes
 app.use("/api/users", userRoutes);

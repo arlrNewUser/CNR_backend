@@ -10,8 +10,8 @@ export const Menu = db.define('menu', {
     timestamps: false,
     indexes: [
         {
-            fields: ["date", "organizationId"],
+            fields: ["date", "organizationId", "mealId"],
             unique: true,
         },
     ],
-  });
+});

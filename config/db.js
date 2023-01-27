@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 // Env variables
 dotenv.config();
 
-const db = new Sequelize('cnrb', process.env.DB_USER, process.env.DB_PASSWORD, {
+const db = new Sequelize('cnre', process.env.DB_USER, process.env.DB_PASSWORD, {
     host: '127.0.0.1',
     port: process.env.DB_PORT,
     dialect: 'mariadb',
